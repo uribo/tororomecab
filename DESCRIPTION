@@ -1,0 +1,25 @@
+Type: Package
+Package: tororomecab
+Title: Utilities for 'mecab' Analyzer
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Shinya",
+           family = "Uryu",
+           role = c("aut", "cre"),
+           email = "suika1127@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: MIT + file LICENSE
+Imports:
+    dplyr (>= 1.0.2),
+    magrittr (>= 1.5),
+    RcppMeCab (>= 0.0.1.2),
+    rlang (>= 0.1.2),
+    tidytext (>= 0.2.6)
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    roxygen2 (>= 7.1.1)
+RoxygenNote: 7.1.1
