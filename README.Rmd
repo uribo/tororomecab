@@ -1,0 +1,55 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# tororomecab
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+tororomecab （トロロメカブ）パッケージは、日本語文章の形態素解析エンジンの[MeCab](https://taku910.github.io/mecab/)を利用した解析結果をtidyに扱うためのパッケージです。形態素解析の処理に[RcppMeCab](https://github.com/junhewk/RcppMeCab)を利用しています。
+
+## インストール
+
+パッケージのインストールはGitHub経由で行います。remotesパッケージを使いますので別途インストールしてください。次のコマンドで必要なパッケージがインストールされます。
+
+``` r
+if (!requireNamespace("remotes"))
+  install.packages("remotes")
+
+remotes::install_github("uribo/tororomecab")
+```
+
+## 使い方
+
+```{r example}
+library(tororomecab)
+```
+
+```{r}
+d <- 
+  data.frame(
+    sentence = c("メロスは激怒した。必ず、かの 邪智暴虐の王を除かなければならぬと決意した。",
+               "こんな夢を見た。\n腕組をして枕元に坐すわっていると、仰向あおむきに寝た女が、静かな声でもう死にますと云う。"))
+
+d_token <- 
+  d %>% 
+  mecab_token_df(sentence)
+d_token
+```
+```{r}
+d_token %>% 
+  dplyr::filter(pos == "名詞") %>% 
+  token_tfidf(doc_id, token)
+```
