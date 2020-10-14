@@ -15,6 +15,18 @@ token_tfidf(data, id, token, sort = TRUE)
 
 \item{sort}{If \code{TRUE}, will show the largest groups at the top.}
 }
+\value{
+\link[tibble:tibble]{tibble}
+}
 \description{
 Create tf-idf data.frame
+}
+\examples{
+\dontrun{
+data.frame(x = intToUtf8(c(12377L, 12418L, 12418L, 12418L, 12418L,
+12418L, 12418L, 12418L, 12418L, 12398L, 12358L, 12385L))) \%>\%
+mecab_token_df(x) \%>\%
+dplyr::filter(pos == intToUtf8(c(21517L, 35422L))) \%>\%
+token_tfidf(doc_id, token)
+}
 }

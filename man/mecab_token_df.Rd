@@ -4,17 +4,25 @@
 \alias{mecab_token_df}
 \title{Create token via data.frame}
 \usage{
-mecab_token_df(data, sentence, sys_dic = "", user_dic = "")
+mecab_token_df(data, sentence, ...)
 }
 \arguments{
 \item{data}{data.frame}
 
 \item{sentence}{A character vector of any length. For analyzing multiple sentences, put them in one character vector.}
 
-\item{sys_dic}{A location of system MeCab dictionary. The default value is "".}
-
-\item{user_dic}{A location of user-specific MeCab dictionary. The default value is "".}
+\item{...}{Additional arguments passed to \link[RcppMeCab:pos]{RcppMeCab::pos}}
+}
+\value{
+\link[tibble:tibble]{tibble}
 }
 \description{
 Create token via data.frame
+}
+\examples{
+\dontrun{
+data.frame(x = intToUtf8(c(12377L, 12418L, 12418L, 12418L, 12418L,
+12418L, 12418L, 12418L, 12418L, 12398L, 12358L, 12385L))) \%>\%
+  mecab_token_df(x)
+}
 }
