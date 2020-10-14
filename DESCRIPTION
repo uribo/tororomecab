@@ -17,6 +17,7 @@ Imports:
     magrittr (>= 1.5),
     RcppMeCab (>= 0.0.1.2),
     rlang (>= 0.1.2),
+    slider (>= 0.1.5),
     tibble (>= 3.0.4),
     tidytext (>= 0.2.6)
 Encoding: UTF-8
